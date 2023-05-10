@@ -55,26 +55,17 @@ regd_users.post("/login", (req,res) => {
 // Add or Update a review for a movie by its ID
 regd_users.put("/auth/review/:id", (req, res) => {
 
-// Add the code here!
+// Add the code here
 });
 
 
 // Deleting a movie review
 
 regd_users.delete("/auth/review/:id", (req, res) => {
-    const id = req.params.id;
-    let reviewer = req.session.authorization['username'];
-    let filtered_review = movies[id]["reviews"];
-    if (filtered_review[reviewer]){
-        delete filtered_review[reviewer];
-        res.send(`Reviews for movie ID  ${id} posted by user: ${reviewer} deleted!`);
-    }
-    else{
-        res.send("Can't delete, as this review has been posted by a different user!");
-    }
+
+  // Add the code here
     });
 
 
-module.exports.authenticated = regd_users;
-module.exports.isValid = isValid;
-module.exports.users = users;
+// Add the codes for module exports
+

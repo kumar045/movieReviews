@@ -1,6 +1,7 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-let movies = require("./movies_db.js");
+// Import the movies_db/js file/module
+
 const regd_users = express.Router();
 
 let users = [];
@@ -29,8 +30,11 @@ const authenticatedUser = (username,password)=>{
 
 //Login for registered users
 regd_users.post("/login", (req,res) => {
+//   This code fetches the "username" from the HTTP request body
   const username = req.body.username;
-  const password = req.body.password;
+  
+//   Add the code for fetching the password from the body
+
   if (!username || !password) {
         return res.status(404).json({message: "Error logging in!"});
     }
@@ -51,20 +55,7 @@ regd_users.post("/login", (req,res) => {
 // Add or Update a review for a movie by its ID
 regd_users.put("/auth/review/:id", (req, res) => {
 
-  const id = req.params.id;
-  let filtered_movie = movies[id]
-  if (filtered_movie) {
-      let review = req.query.review;
-      let reviewer = req.session.authorization['username'];
-      if(review) {
-        filtered_movie['reviews'][reviewer] = review;
-          movies[id] = filtered_movie;
-      }
-      res.send(`Review for the movie with ID  ${id} added/updated!`);
-  }
-  else{
-      res.send("Unable to find this movie!");
-  }
+// Add the code here!
 });
 
 

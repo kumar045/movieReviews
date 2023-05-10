@@ -24,7 +24,7 @@ public_users.post("/register", (req,res) => {
 
 // Get the list of movies
 public_users.get('/',function (req, res) {
-  res.send(JSON.stringify({movies}, null, 4));
+//   Add the code for Getting the list of movies
 });
 
 // Get movies based on ID

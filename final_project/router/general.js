@@ -1,8 +1,8 @@
 const express = require('express');
 const public_users = express.Router();
 let movies = require("./movies_db.js");
-let isValid = require("./regd.js").isValid;
-let users = require("./regd.js").users;
+let isValid = require("./registered.js").isValid;
+let users = require("./registered.js").users;
 const axios = require("axios").default;
 
 
@@ -30,7 +30,7 @@ public_users.get('/',function (req, res) {
 // Get movies based on ID
 public_users.get('/id/:id',function (req, res) {
   const id = req.params.id;
-  res.send(books[id])
+  res.send(movies[id])
  });
   
 // Get movies based on director

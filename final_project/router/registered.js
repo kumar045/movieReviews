@@ -73,10 +73,10 @@ regd_users.put("/auth/review/:id", (req, res) => {
 regd_users.delete("/auth/review/:id", (req, res) => {
     const id = req.params.id;
     let reviewer = req.session.authorization['username'];
-    let filtered_review = mvoies[id]["reviews"];
+    let filtered_review = movies[id]["reviews"];
     if (filtered_review[reviewer]){
         delete filtered_review[reviewer];
-        res.send(`Reviews for movie ID  ${isbn} posted by user: ${reviewer} deleted!`);
+        res.send(`Reviews for movie ID  ${id} posted by user: ${reviewer} deleted!`);
     }
     else{
         res.send("Can't delete, as this review has been posted by a different user!");

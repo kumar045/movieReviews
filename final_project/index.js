@@ -5,10 +5,10 @@ const regd_routes = require('./router/registered.js').authenticated;
 const public_routes = require('./router/general.js').general;
 
 // Add the code for creating an Express app instance
-// const app = express();
+
 
 // Add the code for parsing incoming requests with JSON payloads
-// app.use(express.json());
+
 
 app.use("/registered",session({secret:"fingerprint_customer",resave: true, saveUninitialized: true}))
 
@@ -34,8 +34,6 @@ const PORT = 5000;
 
 // Add the code for mounting the middleware for the 2 routes
 
-app.use("/registered", regd_routes);
-app.use("/", public_routes);
 
 // Add the code for the server to listen on Port 5000
-app.listen(PORT,()=>console.log("Server running on Port 5000..."));
+

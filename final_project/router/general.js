@@ -7,18 +7,7 @@ const axios = require("axios").default;
 
 
 public_users.post("/register", (req,res) => {
-  const username = req.body.username;
-  const password = req.body.password;
-
-  if (username && password) {
-    
-    if (!isValid(username)) { 
-      users.push({"username":username,"password":password});
-      return res.status(200).json({message: "Successfully registred! You can now login."});
-    } else {
-      return res.status(404).json({message: "User with same username already exists!"});    
-    }
-  } 
+  // Complete the code for registering a new user 
   return res.status(404).json({message: "Unable to register user!"});
 });
 

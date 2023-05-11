@@ -13,47 +13,30 @@ public_users.post("/register", (req,res) => {
 
 // Get the list of movies
 public_users.get('/',function (req, res) {
-  res.send(JSON.stringify({movies}, null, 4));
+//   Complete the code for getting the list of movies available in the shop
 });
 
 // Get movies based on ID
 public_users.get('/id/:id',function (req, res) {
-  const id = req.params.id;
+//   Complete the code for getting the movie details based on id
   res.send(movies[id])
  });
   
 // Get movies based on director
 public_users.get('/director/:director',function (req, res) {
-  let moviesbydirector = [];
-  let ids = Object.keys(movies);
-  ids.forEach((id) => {
-    if(movies[id]["director"] === req.params.director) {
-      moviesbydirector.push({"id":id,
-                          "name":movies[id]["name"],
-                          "reviews":movies[id]["reviews"]});
-    }
-  });
+// Complete the code for getting the movie details based on the director
   res.send(JSON.stringify({moviesbydirector}, null, 4));
 });
 
 // Get movies by their name
 public_users.get('/name/:name',function (req, res) {
-  let moviesbyname = [];
-  let ids = Object.keys(movies);
-  ids.forEach((id) => {
-    if(movies[id]["name"] === req.params.name) {
-      moviesbyname.push({"id":id,
-                          "director":movies[id]["director"],
-                          "reviews":movies[id]["reviews"]});
-    }
-  });
+// Complete the code for getting the movie details based on the name
   res.send(JSON.stringify({moviesbyname}, null, 4));
 });
 
 //  Get movie reviews by ID
 public_users.get('/review/:id',function (req, res) {
-  const id = req.params.id;
-  res.send(movies[id]["reviews"])
+  // Complete the code for getting movie reviews based on id
 });
 
 
